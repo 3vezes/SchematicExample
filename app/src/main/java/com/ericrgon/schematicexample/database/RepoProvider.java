@@ -16,6 +16,6 @@ public class RepoProvider {
   @TableEndpoint(table = RepoDatabase.REPOS)
   public static class Repos {
     @ContentUri(path = Path.REPOS, type = "vnd.android.cursor.dir/list")
-    public static final Uri REPOS = Uri.parse("content://" + AUTHORITY + "/repos");
+    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/repos");
   }
 }

@@ -56,7 +56,7 @@ public class RepoActivity extends Activity implements LoaderManager.LoaderCallba
   }
 
   @Override public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-    return new CursorLoader(this, RepoProvider.Repos.REPOS,null,null,null,null);
+    return new CursorLoader(this, RepoProvider.Repos.CONTENT_URI,null,null,null,null);
   }
 
   @Override public void onLoadFinished(Loader<Cursor> loader, Cursor data) {

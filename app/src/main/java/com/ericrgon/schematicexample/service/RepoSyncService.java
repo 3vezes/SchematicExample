@@ -27,10 +27,10 @@ public class RepoSyncService extends IntentService {
       List<Repo> repoList = repos.getUser("Eric-Gonzalez");
 
       ArrayList<ContentProviderOperation> batchOperations = new ArrayList<>(repoList.size());
-      batchOperations.add(ContentProviderOperation.newDelete(RepoProvider.Repos.REPOS).build());
+      batchOperations.add(ContentProviderOperation.newDelete(RepoProvider.Repos.CONTENT_URI).build());
 
       for(Repo repo : repoList){
-        ContentProviderOperation.Builder builder = ContentProviderOperation.newInsert(RepoProvider.Repos.REPOS);
+        ContentProviderOperation.Builder builder = ContentProviderOperation.newInsert(RepoProvider.Repos.CONTENT_URI);
         builder.withValue(RepoColumns.NAME, repo.name);
         builder.withValue(RepoColumns.DESCRIPTION, repo.description);
         batchOperations.add(builder.build());
